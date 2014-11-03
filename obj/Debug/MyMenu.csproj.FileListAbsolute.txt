@@ -1,0 +1,10 @@
+d:\Projects\MyMenu\MyMenu\bin\MyMenu.dll
+d:\Projects\MyMenu\MyMenu\bin\MyMenu.pdb
+d:\Projects\MyMenu\MyMenu\obj\Debug\MyMenu.csprojResolveAssemblyReference.cache
+d:\Projects\MyMenu\MyMenu\obj\Debug\MyMenu.dll
+d:\Projects\MyMenu\MyMenu\obj\Debug\MyMenu.pdb
+D:\MyMenu\MyMenu\bin\MyMenu.dll
+D:\MyMenu\MyMenu\bin\MyMenu.pdb
+D:\MyMenu\MyMenu\obj\Debug\MyMenu.csprojResolveAssemblyReference.cache
+D:\MyMenu\MyMenu\obj\Debug\MyMenu.dll
+D:\MyMenu\MyMenu\obj\Debug\MyMenu.pdb
