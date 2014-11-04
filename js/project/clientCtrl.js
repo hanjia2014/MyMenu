@@ -17,12 +17,12 @@
     //        $scope.isEmailSent = true;
     //    }).error(function () { });
     //};
-    $scope.menuItems = [];
+    $scope.mainItems = [];
     menuService.getMenu().success(function (data) {
-        var dataItems = data.menu.items;
+        var dataItems = data.main.items;
 
         while (dataItems.length) {
-            $scope.menuItems.push(dataItems.splice(0, 3));
+            $scope.mainItems.push(dataItems.splice(0, 3));
         }
     });
 
