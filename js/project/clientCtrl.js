@@ -10,6 +10,10 @@
         while (dataItems.length) {
             $scope.mainItems.push(dataItems.splice(0, 3));
         }
+
+        angular.forEach($scope.mainItems, function(item) {
+            item.index = $index;
+        });
     });
 
     $scope.addToOrder = function(item) {
@@ -17,7 +21,7 @@
             $scope.order.push(item);
             $scope.order.totalCost = $scope.order.totalCost + parseFloat(item.price);
         } else {
-            $scope.order.splice(item, 1);
+            $scope.order.splice(item.index, 1);
             $scope.order.totalCost = $scope.order.totalCost - parseFloat(item.price);
         }
     };
