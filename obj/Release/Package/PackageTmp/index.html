@@ -11,12 +11,6 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/3-col-portfolio.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body data-ng-app="menuApp" data-ng-controller="clientCtrl">
     <!-- Navigation -->
@@ -36,10 +30,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">About</a>
+                        <a href="#/main">Main</a>
                     </li>
                     <li>
-                        <a href="#">Services</a>
+                        <a href="#/desert">Desert</a>
                     </li>
                     <li>
                         <a href="#">Contact</a>
@@ -51,63 +45,27 @@
         <!-- /.container -->
     </nav>
     <!-- Page Content -->
+   
     <div class="container">
         <!-- Page Header -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">
-                    Page Heading
+                <h1 class="page-header">Page Heading
 
                     <small>Secondary Text</small>
                 </h1>
             </div>
         </div>
-        <div data-ng-show="order.length > 0"><input type="button" value="Order" data-ng-click="toggleOrderDetails();" /> ({{order.length}})</div>
-        <!-- /.row -->
-        <div class="row" data-ng-repeat="array in mainItems">
-            <div class="col-md-4 portfolio-item" data-ng-repeat="object in array">
-                <h3>
-                    {{object.name}}
-                </h3>
-                <input type="checkbox" title="Select" data-ng-model="object.isSelected" data-ng-click="addToOrder(object)" />
-                <h4>{{object.price | currency}}</h4>
-                <p>{{object.description}}</p>
+        <div class="row">
+            <div class="col-md-4 portfolio-item">
+                <input type="button" data-ng-disabled="order.length < 1" value="Order" data-ng-click="toggleOrderDetails();" /><span data-ng-show="order.length > 0"> ({{order.count}})</span>
             </div>
         </div>
-        <!-- Projects Row -->
-        <!--<div class="row">
-            <div class="col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="#">Project Name</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-            <div class="col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="#">Project Name</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-            <div class="col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="#">Project Name</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-        </div>-->
         <!-- /.row -->
+        <div data-ng-view></div>
         <hr>
         <!-- Pagination -->
-        <div class="row text-center">
+        <!--<div class="row text-center">
             <div class="col-lg-12">
                 <ul class="pagination">
                     <li>
@@ -133,7 +91,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div>-->
         <!-- /.row -->
         <hr>
         <!-- Footer -->
@@ -147,7 +105,7 @@
         </footer>
     </div>
     <!-- /.container -->
-    
+
     <modal title="Your order details:" visible="showOrderDetails">
         <form role="form">
             <!--<div class="form-group">
@@ -159,7 +117,7 @@
                     <input type="password" class="form-control" id="password" placeholder="Password" />
                 </div>-->
             <div class="form-group" data-ng-repeat="item in order">
-                {{item.name}} - {{item.price | currency}}
+                {{item.name}} x {{item.quantity}} - {{item.price * item.quantity | currency}}
             </div>
             <hr/>
             Total: {{order.totalCost | currency}}
@@ -173,6 +131,7 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- Angular -->
     <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
     <script src="js/project/app.js"></script>
     <script src="js/project/clientCtrl.js"></script>
     <script src="js/project/menuService.js"></script>

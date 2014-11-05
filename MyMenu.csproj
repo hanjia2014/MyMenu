@@ -60,6 +60,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="desert.html" />
+    <Content Include="js\angular-route.min.js" />
+    <Content Include="main.html" />
     <Content Include="css\3-col-portfolio.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />

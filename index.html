@@ -30,10 +30,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">About</a>
+                        <a href="#/main">Main</a>
                     </li>
                     <li>
-                        <a href="#">Services</a>
+                        <a href="#/desert">Desert</a>
                     </li>
                     <li>
                         <a href="#">Contact</a>
@@ -45,6 +45,7 @@
         <!-- /.container -->
     </nav>
     <!-- Page Content -->
+   
     <div class="container">
         <!-- Page Header -->
         <div class="row">
@@ -61,58 +62,10 @@
             </div>
         </div>
         <!-- /.row -->
-        <div class="row" data-ng-repeat="array in mainItems">
-            <div class="col-md-4 portfolio-item" data-ng-repeat="object in array">
-                <h3>{{object.name}}
-                </h3>
-                <input type="checkbox" title="Select" data-ng-model="object.isSelected" data-ng-click="addToOrder(object)" />
-                <div data-ng-show="object.isSelected==true">
-                    <select data-ng-model="object.quantity" data-ng-init="object.quantity = 1" data-ng-change="getOrderCount();">
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                        <option value="4">Four</option>
-                        <option value="5">Five</option>
-                    </select>
-                </div>
-                <h4>{{object.price | currency}}</h4>
-                <p>{{object.description}}</p>
-            </div>
-        </div>
-        <!-- Projects Row -->
-        <!--<div class="row">
-            <div class="col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="#">Project Name</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-            <div class="col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="#">Project Name</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-            <div class="col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="#">Project Name</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div>
-        </div>-->
-        <!-- /.row -->
+        <div data-ng-view></div>
         <hr>
         <!-- Pagination -->
-        <div class="row text-center">
+        <!--<div class="row text-center">
             <div class="col-lg-12">
                 <ul class="pagination">
                     <li>
@@ -138,7 +91,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div>-->
         <!-- /.row -->
         <hr>
         <!-- Footer -->
@@ -178,6 +131,7 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- Angular -->
     <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
     <script src="js/project/app.js"></script>
     <script src="js/project/clientCtrl.js"></script>
     <script src="js/project/menuService.js"></script>

@@ -1,7 +1,6 @@
 ﻿menuApp.controller('clientCtrl', function ($scope, menuService) {
     $scope.copyRight = "Han Jia " + new Date().getFullYear();
     $scope.order = [];
-    $scope.order.totalCost = 0.0;
 
     $scope.mainItems = [];
     menuService.getMenu().success(function (data) {
@@ -10,20 +9,24 @@
         while (dataItems.length) {
             $scope.mainItems.push(dataItems.splice(0, 3));
         }
-
-        angular.forEach($scope.mainItems, function(item) {
-            item.index = $index;
-        });
     });
 
     $scope.addToOrder = function(item) {
         if (item.isSelected) {
             $scope.order.push(item);
-            $scope.order.totalCost = $scope.order.totalCost + parseFloat(item.price);
         } else {
-            $scope.order.splice(item.index, 1);
-            $scope.order.totalCost = $scope.order.totalCost - parseFloat(item.price);
+            var index = $scope.order.indexOf(item);
+            $scope.order.splice(index, 1);
         }
+
+        $scope.getOrderCount();
+    };
+
+    $scope.getOrderCount = function () {
+        $scope.order.count = 0;
+        angular.forEach($scope.order, function(item) {
+            $scope.order.count = $scope.order.count + parseInt(item.quantity);
+        });
     };
 
     function checkNullOrEmpty(value) {
@@ -31,6 +34,10 @@
     };
 
     $scope.toggleOrderDetails = function () {
+        $scope.order.totalCost = 0.0;
+        angular.forEach($scope.order, function(item) {
+            $scope.order.totalCost = $scope.order.totalCost + parseFloat(item.price) * parseInt(item.quantity);
+        });
         $scope.showOrderDetails = !$scope.showOrderDetails;
     };
 });

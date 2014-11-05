@@ -1,4 +1,4 @@
-﻿var menuApp = angular.module('menuApp', []);
+﻿var menuApp = angular.module('menuApp', ['ngRoute']);
 
 menuApp.directive('modal', function () {
     return {
@@ -40,4 +40,20 @@ menuApp.directive('modal', function () {
             });
         }
     };
+});
+
+menuApp.config(function($routeProvider) {
+    $routeProvider
+        .when('/', {
+            templateUrl: 'main.html'
+        })
+        .when('/main', {
+            templateUrl: 'main.html'
+        })
+        .when('/desert', {
+            templateUrl: 'desert.html'
+        })
+        .otherwise({
+            redirectTo: '/'
+        });
 });
