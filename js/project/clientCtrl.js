@@ -11,7 +11,7 @@
         }
     });
 
-    $scope.addToOrder = function(item) {
+    $scope.addToOrder = function (item) {
         if (item.isSelected) {
             $scope.order.push(item);
         } else {
@@ -24,7 +24,7 @@
 
     $scope.getOrderCount = function () {
         $scope.order.count = 0;
-        angular.forEach($scope.order, function(item) {
+        angular.forEach($scope.order, function (item) {
             $scope.order.count = $scope.order.count + parseInt(item.quantity);
         });
     };
@@ -35,7 +35,7 @@
 
     $scope.toggleOrderDetails = function () {
         $scope.order.totalCost = 0.0;
-        angular.forEach($scope.order, function(item) {
+        angular.forEach($scope.order, function (item) {
             $scope.order.totalCost = $scope.order.totalCost + parseFloat(item.price) * parseInt(item.quantity);
         });
         $scope.showOrderDetails = !$scope.showOrderDetails;
