@@ -11,12 +11,6 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/3-col-portfolio.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body data-ng-app="menuApp" data-ng-controller="clientCtrl">
     <!-- Navigation -->
@@ -55,21 +49,32 @@
         <!-- Page Header -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">
-                    Page Heading
+                <h1 class="page-header">Page Heading
 
                     <small>Secondary Text</small>
                 </h1>
             </div>
         </div>
-        <div data-ng-show="order.length > 0"><input type="button" value="Order" data-ng-click="toggleOrderDetails();" /> ({{order.length}})</div>
+        <div class="row">
+            <div class="col-md-4 portfolio-item">
+                <input type="button" data-ng-disabled="order.length < 1" value="Order" data-ng-click="toggleOrderDetails();" /><span data-ng-show="order.length > 0"> ({{order.count}})</span>
+            </div>
+        </div>
         <!-- /.row -->
         <div class="row" data-ng-repeat="array in mainItems">
             <div class="col-md-4 portfolio-item" data-ng-repeat="object in array">
-                <h3>
-                    {{object.name}}
+                <h3>{{object.name}}
                 </h3>
                 <input type="checkbox" title="Select" data-ng-model="object.isSelected" data-ng-click="addToOrder(object)" />
+                <div data-ng-show="object.isSelected==true">
+                    <select data-ng-model="object.quantity" data-ng-init="object.quantity = 1" data-ng-change="getOrderCount();">
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                        <option value="4">Four</option>
+                        <option value="5">Five</option>
+                    </select>
+                </div>
                 <h4>{{object.price | currency}}</h4>
                 <p>{{object.description}}</p>
             </div>
@@ -147,7 +152,7 @@
         </footer>
     </div>
     <!-- /.container -->
-    
+
     <modal title="Your order details:" visible="showOrderDetails">
         <form role="form">
             <!--<div class="form-group">
@@ -159,7 +164,7 @@
                     <input type="password" class="form-control" id="password" placeholder="Password" />
                 </div>-->
             <div class="form-group" data-ng-repeat="item in order">
-                {{item.name}} - {{item.price | currency}}
+                {{item.name}} x {{item.quantity}} - {{item.price * item.quantity | currency}}
             </div>
             <hr/>
             Total: {{order.totalCost | currency}}
