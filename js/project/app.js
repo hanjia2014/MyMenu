@@ -48,6 +48,7 @@ menuApp.config(function($routeProvider) {
             templateUrl: 'category.html'
         })
         .when('/category/:categoryId', {
+            controller: 'categoryCtrl',
             templateUrl: 'category.html'
         })
         .otherwise({
