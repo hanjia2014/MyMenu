@@ -45,13 +45,10 @@ menuApp.directive('modal', function () {
 menuApp.config(function($routeProvider) {
     $routeProvider
         .when('/', {
-            templateUrl: 'main.html'
+            templateUrl: 'category.html'
         })
-        .when('/main', {
-            templateUrl: 'main.html'
-        })
-        .when('/desert', {
-            templateUrl: 'desert.html'
+        .when('/category/:categoryId', {
+            templateUrl: 'category.html'
         })
         .otherwise({
             redirectTo: '/'

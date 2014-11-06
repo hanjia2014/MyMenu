@@ -1,5 +1,5 @@
-﻿menuApp.controller('clientCtrl', function ($scope, $routeParams, menuService) {
-    $scope.copyRight = "Han Jia " + new Date().getFullYear();
+﻿menuApp.controller('categoryCtrl', function ($scope, $routeParams, menuService) {
+
     $scope.order = [];
 
     $scope.menuItems = [];
