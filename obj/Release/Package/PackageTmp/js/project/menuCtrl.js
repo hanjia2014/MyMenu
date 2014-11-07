@@ -1,19 +1,19 @@
-﻿menuApp.controller('categoryCtrl', function ($scope, $routeParams, menuService) {
-
+﻿menuApp.controller('menuCtrl', function ($scope, $routeParams, menuService) {
+    $scope.copyRight = "Han Jia " + new Date().getFullYear();
     $scope.order = [];
-
     $scope.menuItems = [];
     $scope.categories = [];
-    var dataItems = [];
-
-    var categoryId = $routeParams.categoryId;
-    if (categoryId) {
-        $scope.categoryId = categoryId;
-    }
+    var allItems = [];
 
     menuService.getMenu().success(function (data) {
-        dataItems = data.menu.items;
+        var dataItems = data.menu.items;
+
         $scope.categories = data.menu.categories;
+
+        for (var i = 0; i < dataItems.length; i++) {
+            var item = dataItems[i];
+            allItems.push(item);
+        };
 
         while (dataItems.length) {
             $scope.menuItems.push(dataItems.splice(0, 3));
@@ -48,5 +48,23 @@
             $scope.order.totalCost = $scope.order.totalCost + parseFloat(item.price) * parseInt(item.quantity);
         });
         $scope.showOrderDetails = !$scope.showOrderDetails;
+    };
+
+    $scope.getItemByCategory = function (categoryId) {
+        var items = [];
+        $scope.menuItems.length = 0;
+
+        angular.forEach(allItems, function (item) {
+            if (categoryId == 0) {
+                items.push(item);
+            }
+            else if (item.categoryId == categoryId) {
+                items.push(item);
+            }
+        });
+
+        while (items.length) {
+            $scope.menuItems.push(items.splice(0, 3));
+        }
     };
 });

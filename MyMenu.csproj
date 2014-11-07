@@ -62,10 +62,8 @@
   <ItemGroup>
     <Content Include="js\angular-route.min.js" />
     <Content Include="js\ng-infinite-scroll.min.js" />
-    <Content Include="js\project\categoryCtrl.js" />
     <Content Include="js\ui-bootstrap-0.11.0.min.js" />
     <Content Include="js\ui-bootstrap-tpls-0.11.0.min.js" />
-    <Content Include="category.html" />
     <Content Include="css\3-col-portfolio.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
@@ -76,7 +74,7 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery.js" />
     <Content Include="js\project\app.js" />
-    <Content Include="js\project\clientCtrl.js" />
+    <Content Include="js\project\menuCtrl.js" />
     <Content Include="js\project\menuService.js" />
   </ItemGroup>
   <ItemGroup>

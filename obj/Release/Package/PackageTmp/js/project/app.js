@@ -42,18 +42,16 @@ menuApp.directive('modal', function () {
     };
 });
 
-menuApp.config(function($routeProvider) {
-    $routeProvider
-        .when('/', {
-            templateUrl: 'main.html'
-        })
-        .when('/main', {
-            templateUrl: 'main.html'
-        })
-        .when('/desert', {
-            templateUrl: 'desert.html'
-        })
-        .otherwise({
-            redirectTo: '/'
-        });
-});
+//menuApp.config(function($routeProvider) {
+//    $routeProvider
+//        .when('/', {
+//            templateUrl: 'category.html'
+//        })
+//        .when('/category/:categoryId', {
+//            controller: 'categoryCtrl',
+//            templateUrl: 'category.html'
+//        })
+//        .otherwise({
+//            redirectTo: '/'
+//        });
+//});

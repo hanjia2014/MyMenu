@@ -1,9 +1,31 @@
 ﻿{
-    "main": {
-        "header": "SVG Viewer",
+    "menu": {
+        "categories": [
+			{
+                "id": "0",
+                "name": "All"
+            },
+            {
+                "id": "1",
+                "name": "Entry"
+            },
+            {
+                "id": "2",
+                "name": "Main"
+            },
+            {
+                "id": "3",
+                "name": "Soup"
+            },
+            {
+                "id": "4",
+                "name": "Desert"
+            }
+        ],
         "items": [
             {
                 "id": "1",
+                "categoryId": "1",
                 "name": "Steak",
                 "price": "18.99",
                 "img": "",
@@ -12,26 +34,38 @@
             },
             {
                 "id": "2",
+                "categoryId": "2",
                 "name": "Chips",
                 "price": "2.99",
                 "img": "",
                 "description": "This is chips",
                 "isSelected": "false"
             },
-			{
+            {
                 "id": "3",
+                "categoryId": "2",
                 "name": "Garlic bread",
                 "price": "4.99",
                 "img": "",
                 "description": "This is bread",
                 "isSelected": "false"
             },
-			{
+            {
                 "id": "4",
+                "categoryId": "1",
                 "name": "Pie",
                 "price": "3.99",
                 "img": "",
                 "description": "This is pie",
+                "isSelected": "false"
+            },
+            {
+                "id": "5",
+                "categoryId": "4",
+                "name": "Ice Cream",
+                "price": "1.99",
+                "img": "",
+                "description": "This is ice cream",
                 "isSelected": "false"
             }
         ]
