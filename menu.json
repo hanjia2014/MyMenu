@@ -26,19 +26,19 @@
             {
                 "id": "1",
                 "categoryId": "1",
-                "name": "Steak",
+                "name": "COMANCHE CHICKEN SALAD",
                 "price": "18.99",
                 "img": "",
-                "description": "This is steak",
+                "description": "Oven-baked chicken breast, Cos lettuce, parmesan cheese, garlic croutons and streaky bacon, tossed in L.S. Caesar style dressing. Topped w a poached egg. Anchovies optional.",
                 "isSelected": "false"
             },
             {
                 "id": "2",
                 "categoryId": "2",
-                "name": "Chips",
+                "name": "DIXIE CHICKEN™ (MEDIUM)",
                 "price": "2.99",
                 "img": "",
-                "description": "This is chips",
+                "description": "Breast(s) of chicken poached in a creamy sauce of white wine, garlic, spring onion, fresh herbs, corn & carrot w buffalo chips & the L.S. coleslaw....... ‘World famous all around New Zealand’.",
                 "isSelected": "false"
             },
             {
@@ -53,10 +53,10 @@
             {
                 "id": "4",
                 "categoryId": "1",
-                "name": "Pie",
+                "name": "JACK DANIELS CHOCOLATE FUDGE PUDDING",
                 "price": "3.99",
                 "img": "",
-                "description": "This is pie",
+                "description": "A rich, self saucing chocolate fudge pudding, laced with Jack Daniels. Served with choc sauce, whipped cream and vanilla ice cream.",
                 "isSelected": "false"
             },
             {

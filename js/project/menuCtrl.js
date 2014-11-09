@@ -13,11 +13,8 @@
         for (var i = 0; i < dataItems.length; i++) {
             var item = dataItems[i];
             allItems.push(item);
+            $scope.menuItems.push(item);
         };
-
-        while (dataItems.length) {
-            $scope.menuItems.push(dataItems.splice(0, 3));
-        }
     });
 
     $scope.addToOrder = function (item) {
@@ -63,8 +60,9 @@
             }
         });
 
-        while (items.length) {
-            $scope.menuItems.push(items.splice(0, 3));
-        }
+        for (var i = 0; i < items.length; i++) {
+            var item = items[i];
+            $scope.menuItems.push(item);
+        };
     };
 });
