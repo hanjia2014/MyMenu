@@ -20,15 +20,14 @@ footer {
 }
 
 button {
-    height: 30px; /*margin: 0 7px;
-    padding: 5px 0;*/
+    height: 30px; 
+    margin: 0 7px;
+    padding: 5px 0;
     font-weight: 700;
     font-size: 15px;
-    letter-spacing: 2px;
     color: #fff;
     border: 0;
     border-radius: 5px;
-    text-transform: uppercase;
     outline: 0;
     display: table-cell;
     vertical-align: middle;
@@ -54,7 +53,7 @@ button {
             position: absolute;
             content: attr(data-counter);
             padding: 5px 8px;
-            margin: -29px 0 0 0px;
+            margin: -15px 0 0 0px;
             line-height: 100%;
             border: 2px #fff solid;
             border-radius: 60px;

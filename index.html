@@ -32,7 +32,7 @@
 
                     <li data-ng-repeat="category in categories"><a data-ng-click="getItemByCategory(category.id)" style="cursor: pointer">{{category.name}}</a></li>
                     <!--<li><a style="cursor: pointer" data-ng-disabled="order.length < 1" value="Order" data-ng-click="toggleOrderDetails();">Order<span data-ng-show="order.length > 0"> ({{order.count}})</span></a></li>-->
-                    <li style="vertical-align:middle"><button class="order" data-ng-disabled="order.length < 1" value="Order" data-ng-click="toggleOrderDetails();">Order</button></li>
+                    <li style="padding-top: 10px"><button class="order" data-ng-disabled="order.length < 1" value="Order" data-ng-click="toggleOrderDetails();">Order</button></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
