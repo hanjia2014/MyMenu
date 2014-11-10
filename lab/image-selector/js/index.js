@@ -1,7 +1,7 @@
 // item selection
-$('li').click(function () {
+$('.li').click(function () {
   $(this).toggleClass('selected');
-  if ($('li.selected').length == 0)
+  if ($('.li.selected').length == 0)
     $('.select').removeClass('selected');
   else
     $('.select').addClass('selected');
@@ -10,12 +10,12 @@ $('li').click(function () {
 
 // all item selection
 $('.select').click(function () {
-  if ($('li.selected').length == 0) {
-    $('li').addClass('selected');
+  if ($('.li.selected').length == 0) {
+    $('.li').addClass('selected');
     $('.select').addClass('selected');
   }
   else {
-    $('li').removeClass('selected');
+    $('.li').removeClass('selected');
     $('.select').removeClass('selected');
   }
   counter();
@@ -23,9 +23,9 @@ $('.select').click(function () {
 
 // number of selected items
 function counter() {
-  if ($('li.selected').length > 0)
-    $('.send').addClass('selected');
+  if ($('.li.selected').length > 0)
+    $('.order').addClass('selected');
   else
-    $('.send').removeClass('selected');
-  $('.send').attr('data-counter',$('li.selected').length);
+    $('.order').removeClass('selected');
+  $('.order').attr('data-counter',$('.li.selected').length);
 }

@@ -34,6 +34,8 @@
         angular.forEach($scope.order, function (item) {
             $scope.order.count = $scope.order.count + parseInt(item.quantity);
         });
+
+        counter($scope.order.count);
     };
 
     function checkNullOrEmpty(value) {
@@ -66,4 +68,14 @@
             $scope.menuItems.push(item);
         };
     };
+
+
+    function counter(count) {
+        if (count > 0)
+            $('.order').addClass('selected');
+        else
+            $('.order').removeClass('selected');
+        $('.order').attr('data-counter', count);
+    }
+
 });
