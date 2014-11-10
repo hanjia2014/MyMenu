@@ -11,7 +11,7 @@
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="css/3-col-portfolio.css" rel="stylesheet">
+    <link href="css/site.css" rel="stylesheet">
 </head>
 <body data-ng-app="menuApp" data-ng-controller="menuCtrl">
     <!-- Navigation -->
@@ -63,7 +63,7 @@
                     <h4 style="display: inline">{{object.price | currency}}</h4>
                     <div style="display: inline" data-ng-show="object.isSelected==true">
                         Quantity: 
-                    <select data-ng-model="object.quantity" data-ng-init="object.quantity = 1" data-ng-change="getOrderCount();">
+                    <select data-ng-model="object.quantity" data-ng-change="getOrderCount();">
                         <option value="1">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>

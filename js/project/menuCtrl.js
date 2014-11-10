@@ -12,6 +12,7 @@
 
         for (var i = 0; i < dataItems.length; i++) {
             var item = dataItems[i];
+            item.quantity = 1;
             allItems.push(item);
             $scope.menuItems.push(item);
         };

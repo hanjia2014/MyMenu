@@ -64,7 +64,7 @@
     <Content Include="js\ng-infinite-scroll.min.js" />
     <Content Include="js\ui-bootstrap-0.11.0.min.js" />
     <Content Include="js\ui-bootstrap-tpls-0.11.0.min.js" />
-    <Content Include="css\3-col-portfolio.css" />
+    <Content Include="css\site.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
