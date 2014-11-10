@@ -24,6 +24,7 @@
         } else {
             var index = $scope.order.indexOf(item);
             $scope.order.splice(index, 1);
+            item.quantity = 1;
         }
 
         $scope.getOrderCount();

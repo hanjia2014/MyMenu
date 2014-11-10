@@ -12,12 +12,10 @@
 
         for (var i = 0; i < dataItems.length; i++) {
             var item = dataItems[i];
+            item.quantity = 1;
             allItems.push(item);
+            $scope.menuItems.push(item);
         };
-
-        while (dataItems.length) {
-            $scope.menuItems.push(dataItems.splice(0, 3));
-        }
     });
 
     $scope.addToOrder = function (item) {
@@ -36,6 +34,8 @@
         angular.forEach($scope.order, function (item) {
             $scope.order.count = $scope.order.count + parseInt(item.quantity);
         });
+
+        counter($scope.order.count);
     };
 
     function checkNullOrEmpty(value) {
@@ -63,8 +63,19 @@
             }
         });
 
-        while (items.length) {
-            $scope.menuItems.push(items.splice(0, 3));
-        }
+        for (var i = 0; i < items.length; i++) {
+            var item = items[i];
+            $scope.menuItems.push(item);
+        };
     };
+
+
+    function counter(count) {
+        if (count > 0)
+            $('.order').addClass('selected');
+        else
+            $('.order').removeClass('selected');
+        $('.order').attr('data-counter', count);
+    }
+
 });
