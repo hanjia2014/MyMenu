@@ -1,4 +1,5 @@
 ﻿menuApp.controller('menuCtrl', function ($scope, $routeParams, menuService) {
+    $('#note').hide();
     $scope.copyRight = "Han Jia " + new Date().getFullYear();
     $scope.order = [];
     $scope.menuItems = [];

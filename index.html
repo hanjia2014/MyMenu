@@ -32,7 +32,8 @@
 
                     <li data-ng-repeat="category in categories"><a data-ng-click="getItemByCategory(category.id)" style="cursor: pointer">{{category.name}}</a></li>
                     <!--<li><a style="cursor: pointer" data-ng-disabled="order.length < 1" value="Order" data-ng-click="toggleOrderDetails();">Order<span data-ng-show="order.length > 0"> ({{order.count}})</span></a></li>-->
-                    <li style="padding-top: 10px"><button class="order" data-ng-disabled="order.length < 1" value="Order" data-ng-click="toggleOrderDetails();">Order</button></li>
+                    <li style="padding-top: 10px">
+                        <button class="order" data-ng-disabled="order.length < 1" value="Order" data-ng-click="toggleOrderDetails();">Order</button></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -52,7 +53,7 @@
             </div>
         </div>
         <!-- /.row -->
-        <div class="row" data-ng-repeat="object in menuItems">
+        <div id="divItems" class="row" data-ng-repeat="object in menuItems">
             <div class="col-lg-12">
                 <p>
                     <h3 style="display: inline">{{object.name}}
@@ -93,7 +94,7 @@
 
     <modal title="Your order details:" visible="showOrderDetails">
         <form role="form">
-            <table data-ng-show="order.length>0">
+            <table data-ng-show="order.length>0" style="width:100%">
                 <tr>
                     <th style="width: 70%">Name</th>
                     <th style="width: 15%">Quantity</th>
@@ -110,6 +111,11 @@
                     <td>{{order.totalCost | currency}}</td>
                 </tr>
             </table>
+            <div id="note" data-ng-show="hideNote">
+                <textarea rows="4" cols="50" data-ng-model="order.note">
+                </textarea>
+            </div>
+            <a href="" onclick="$('#note').toggle(500);" data-ng-click="hideNote = !hideNote">Add Note</a>
         </form>
     </modal>
 

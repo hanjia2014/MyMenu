@@ -19,8 +19,12 @@ footer {
     margin: 50px 0;
 }
 
+#divItems .row {
+    border-top: 1px solid #e5e5e5;
+}
+
 button {
-    height: 30px; 
+    height: 30px;
     margin: 0 7px;
     padding: 5px 0;
     font-weight: 700;

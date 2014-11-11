@@ -1,4 +1,5 @@
 ﻿menuApp.controller('menuCtrl', function ($scope, $routeParams, menuService) {
+    $('#note').hide();
     $scope.copyRight = "Han Jia " + new Date().getFullYear();
     $scope.order = [];
     $scope.menuItems = [];
@@ -24,6 +25,7 @@
         } else {
             var index = $scope.order.indexOf(item);
             $scope.order.splice(index, 1);
+            item.quantity = 1;
         }
 
         $scope.getOrderCount();

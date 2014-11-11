@@ -2,3 +2,4 @@ D:\MyMenu\MyMenu\bin\MyMenu.dll
 D:\MyMenu\MyMenu\bin\MyMenu.pdb
 D:\MyMenu\MyMenu\obj\Release\MyMenu.dll
 D:\MyMenu\MyMenu\obj\Release\MyMenu.pdb
+D:\MyMenu\MyMenu\obj\Release\MyMenu.csprojResolveAssemblyReference.cache
