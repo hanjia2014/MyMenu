@@ -4,6 +4,8 @@
     $scope.order = [];
     $scope.menuItems = [];
     $scope.categories = [];
+    $scope.submitOrder = {};
+    $scope.submitOrder.items = [];
     var allItems = [];
 
     menuService.getMenu().success(function (data) {
@@ -80,4 +82,27 @@
         $('.order').attr('data-counter', count);
     }
 
+    $scope.submit = function() {
+        angular.forEach($scope.order, function(item) {
+            if (item.quantity > 1) {
+                for (var i = 0; i < item.quantity; i++) {
+                    $scope.submitOrder.items.push({
+                        id: item.id,
+                        name: item.name,
+                        categoryId: item.categoryId,
+                        price: item.price
+                    });
+                }
+            } else {
+                $scope.submitOrder.items.push({
+                    id: item.id,
+                    name: item.name,
+                    categoryId: item.categoryId,
+                    price: item.price
+                });
+            }
+        });
+        $scope.submitOrder.submitTime = new Date();
+        //submit
+    };
 });

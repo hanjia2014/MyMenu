@@ -110,12 +110,16 @@
                     <td>Total:</td>
                     <td>{{order.totalCost | currency}}</td>
                 </tr>
+                <tr>
+                    <td></td>
+                    <td><a href="" onclick="$('#note').toggle(500);" data-ng-click="hideNote = !hideNote">Add Note</a></td>
+                    <td><button type="submit" data-ng-click="submit();">Submit</button></td>
+                </tr>
             </table>
             <div id="note" data-ng-show="hideNote">
-                <textarea rows="4" cols="50" data-ng-model="order.note">
+                <textarea rows="4" cols="50" data-ng-model="submitOrder.note">
                 </textarea>
             </div>
-            <a href="" onclick="$('#note').toggle(500);" data-ng-click="hideNote = !hideNote">Add Note</a>
         </form>
     </modal>
 
