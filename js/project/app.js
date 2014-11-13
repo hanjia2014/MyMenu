@@ -1,7 +1,19 @@
 ﻿var menuApp = angular.module('menuApp', ['ngRoute']);
-menuApp.config(function ($httpProvider) {
+menuApp.config(['$httpProvider', function ($httpProvider) {
+    $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
-});
+
+    $httpProvider.defaults.transformRequest = function(data) {
+        if (data === undefined) {
+            return data;
+        }
+        return $.param(data);
+    };
+
+    $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+
+}]);
+
 menuApp.directive('modal', function () {
     return {
         template: '<div class="modal fade">' +

@@ -5,8 +5,16 @@
     $scope.menuItems = [];
     $scope.categories = [];
     $scope.submitOrder = {};
-    $scope.submitOrder.items = [];
+    $scope.submitOrder.Items = [];
     var allItems = [];
+
+    function getDateTime(dateValue) {
+        var value = '\/Date(0)\/';
+        if (dateValue) {
+            value = '\/Date(' + Date.parse(dateValue) + ')\/';
+        }
+        return value;
+    };
 
     //talk to server
     menuService.getCategories().success(function (data) {
@@ -101,27 +109,47 @@
         $('.order').attr('data-counter', count);
     }
 
-    $scope.submit = function() {
+    function generateNewId() {
+        var guid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+        return guid;
+    };
+
+    $scope.submit = function () {
+        var orderId = generateNewId();
+        $scope.submitOrder.Id = orderId;
+        //$scope.submitOrder.Time = new Date();
+        $scope.submitOrder.Status = "In Progress";
+
+
         angular.forEach($scope.order, function(item) {
             if (item.Quantity > 1) {
                 for (var i = 0; i < item.Quantity; i++) {
-                    $scope.submitOrder.items.push({
-                        id: item.Id,
-                        name: item.Name,
-                        categoryId: item.CategoryId,
-                        price: item.Price
+                    $scope.submitOrder.Items.push({
+                        OrderId: orderId,
+                        MenuItemId: item.Id,
+                        MenuItemName: item.Name,
+                        CategoryId: item.CategoryId,
+                        Price: item.Price
                     });
                 }
             } else {
-                $scope.submitOrder.items.push({
-                    id: item.Id,
-                    name: item.Name,
-                    categoryId: item.CategoryId,
-                    price: item.Price
+                $scope.submitOrder.Items.push({
+                    OrderId: orderId,
+                    MenuItemId: item.Id,
+                    MenuItemName: item.Name,
+                    CategoryId: item.CategoryId,
+                    Price: item.Price
                 });
             }
         });
-        $scope.submitOrder.submitTime = new Date();
         //submit
+        menuService.submitOrder($scope.submitOrder).success(function (data) {
+            
+        }).error(function (data, status, headers, config) {
+            
+        });
     };
 });
