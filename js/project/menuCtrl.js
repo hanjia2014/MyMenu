@@ -10,35 +10,43 @@
 
     //talk to server
     menuService.getCategories().success(function (data) {
-        var categories = data;
+        $scope.categories = data;
+        if ($scope.categories.length > 0) {
+            $scope.categories.push({ Id: 0, Name: 'All' });
+        }
     });
 
     menuService.getMenuItems().success(function (data) {
-        var items = data;
-    });
-
-    //
-
-    menuService.getMenu().success(function (data) {
-        var dataItems = data.menu.items;
-
-        $scope.categories = data.menu.categories;
-
-        for (var i = 0; i < dataItems.length; i++) {
-            var item = dataItems[i];
-            item.quantity = 1;
+        for (var i = 0; i < data.length; i++) {
+            var item = data[i];
+            item.Quantity = 1;
             allItems.push(item);
             $scope.menuItems.push(item);
         };
     });
 
+    //
+
+    menuService.getMenu().success(function (data) {
+        //var dataItems = data.menu.items;
+
+        //$scope.categories = data.menu.categories;
+
+        //for (var i = 0; i < dataItems.length; i++) {
+        //    var item = dataItems[i];
+        //    item.Quantity = 1;
+        //    allItems.push(item);
+        //    $scope.menuItems.push(item);
+        //};
+    });
+
     $scope.addToOrder = function (item) {
-        if (item.isSelected) {
+        if (item.IsSelected) {
             $scope.order.push(item);
         } else {
             var index = $scope.order.indexOf(item);
             $scope.order.splice(index, 1);
-            item.quantity = 1;
+            item.Quantity = 1;
         }
 
         $scope.getOrderCount();
@@ -47,7 +55,7 @@
     $scope.getOrderCount = function () {
         $scope.order.count = 0;
         angular.forEach($scope.order, function (item) {
-            $scope.order.count = $scope.order.count + parseInt(item.quantity);
+            $scope.order.count = $scope.order.count + parseInt(item.Quantity);
         });
 
         counter($scope.order.count);
@@ -58,9 +66,9 @@
     };
 
     $scope.toggleOrderDetails = function () {
-        $scope.order.totalCost = 0.0;
+        $scope.order.TotalCost = 0.0;
         angular.forEach($scope.order, function (item) {
-            $scope.order.totalCost = $scope.order.totalCost + parseFloat(item.price) * parseInt(item.quantity);
+            $scope.order.TotalCost = $scope.order.TotalCost + parseFloat(item.Price) * parseInt(item.Quantity);
         });
         $scope.showOrderDetails = !$scope.showOrderDetails;
     };
@@ -73,7 +81,7 @@
             if (categoryId == 0) {
                 items.push(item);
             }
-            else if (item.categoryId == categoryId) {
+            else if (item.CategoryId == categoryId) {
                 items.push(item);
             }
         });
@@ -95,21 +103,21 @@
 
     $scope.submit = function() {
         angular.forEach($scope.order, function(item) {
-            if (item.quantity > 1) {
-                for (var i = 0; i < item.quantity; i++) {
+            if (item.Quantity > 1) {
+                for (var i = 0; i < item.Quantity; i++) {
                     $scope.submitOrder.items.push({
-                        id: item.id,
-                        name: item.name,
-                        categoryId: item.categoryId,
-                        price: item.price
+                        id: item.Id,
+                        name: item.Name,
+                        categoryId: item.CategoryId,
+                        price: item.Price
                     });
                 }
             } else {
                 $scope.submitOrder.items.push({
-                    id: item.id,
-                    name: item.name,
-                    categoryId: item.categoryId,
-                    price: item.price
+                    id: item.Id,
+                    name: item.Name,
+                    categoryId: item.CategoryId,
+                    price: item.Price
                 });
             }
         });
