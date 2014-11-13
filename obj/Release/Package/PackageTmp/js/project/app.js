@@ -1,5 +1,7 @@
 ﻿var menuApp = angular.module('menuApp', ['ngRoute']);
-
+menuApp.config(function ($httpProvider) {
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+});
 menuApp.directive('modal', function () {
     return {
         template: '<div class="modal fade">' +
@@ -41,17 +43,3 @@ menuApp.directive('modal', function () {
         }
     };
 });
-
-//menuApp.config(function($routeProvider) {
-//    $routeProvider
-//        .when('/', {
-//            templateUrl: 'category.html'
-//        })
-//        .when('/category/:categoryId', {
-//            controller: 'categoryCtrl',
-//            templateUrl: 'category.html'
-//        })
-//        .otherwise({
-//            redirectTo: '/'
-//        });
-//});

@@ -8,6 +8,17 @@
     $scope.submitOrder.items = [];
     var allItems = [];
 
+    //talk to server
+    menuService.getCategories().success(function (data) {
+        var categories = data;
+    });
+
+    menuService.getMenuItems().success(function (data) {
+        var items = data;
+    });
+
+    //
+
     menuService.getMenu().success(function (data) {
         var dataItems = data.menu.items;
 
