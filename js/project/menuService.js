@@ -4,11 +4,9 @@
             return $http.get('menu.json');
         },
         getCategories: function () {
-            //return $http.get('http://localhost:88/api/category');
             return $http.get('http://menuserver.azurewebsites.net/api/category');
         },
         getMenuItems: function () {
-            //return $http.get('http://localhost:88/api/menuitem');
             return $http.get('http://menuserver.azurewebsites.net/api/menuitem');
         },
         submitOrder: function (order) {

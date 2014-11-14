@@ -2,71 +2,71 @@
     "menu": {
         "categories": [
 			{
-                "id": "0",
-                "name": "All"
+                "Id": "0",
+                "Name": "All"
             },
             {
-                "id": "1",
-                "name": "Entry"
+                "Id": "1",
+                "Name": "Entry"
             },
             {
-                "id": "2",
-                "name": "Main"
+                "Id": "2",
+                "Name": "Main"
             },
             {
-                "id": "3",
-                "name": "Soup"
+                "Id": "3",
+                "Name": "Soup"
             },
             {
-                "id": "4",
-                "name": "Desert"
+                "Id": "4",
+                "Name": "Desert"
             }
         ],
         "items": [
             {
-                "id": "1",
-                "categoryId": "1",
-                "name": "COMANCHE CHICKEN SALAD",
-                "price": "18.99",
-                "img": "",
-                "description": "Oven-baked chicken breast, Cos lettuce, parmesan cheese, garlic croutons and streaky bacon, tossed in L.S. Caesar style dressing. Topped w a poached egg. Anchovies optional.",
-                "isSelected": "false"
+                "Id": "1",
+                "CategoryId": "1",
+                "Name": "COMANCHE CHICKEN SALAD",
+                "Price": "18.99",
+                "Img": "",
+                "Description": "Oven-baked chicken breast, Cos lettuce, parmesan cheese, garlic croutons and streaky bacon, tossed in L.S. Caesar style dressing. Topped w a poached egg. Anchovies optional.",
+                "IsSelected": "false"
             },
             {
-                "id": "2",
-                "categoryId": "2",
-                "name": "DIXIE CHICKEN™ (MEDIUM)",
-                "price": "2.99",
-                "img": "",
-                "description": "Breast(s) of chicken poached in a creamy sauce of white wine, garlic, spring onion, fresh herbs, corn & carrot w buffalo chips & the L.S. coleslaw....... ‘World famous all around New Zealand’.",
-                "isSelected": "false"
+                "Id": "2",
+                "CategoryId": "2",
+                "Name": "DIXIE CHICKEN™ (MEDIUM)",
+                "Price": "2.99",
+                "Img": "",
+                "Description": "Breast(s) of chicken poached in a creamy sauce of white wine, garlic, spring onion, fresh herbs, corn & carrot w buffalo chips & the L.S. coleslaw....... ‘World famous all around New Zealand’.",
+                "IsSelected": "false"
             },
             {
-                "id": "3",
-                "categoryId": "2",
-                "name": "Garlic bread",
-                "price": "4.99",
-                "img": "",
-                "description": "This is bread",
-                "isSelected": "false"
+                "Id": "3",
+                "CategoryId": "2",
+                "Name": "Garlic bread",
+                "Price": "4.99",
+                "Img": "",
+                "Description": "This is bread",
+                "IsSelected": "false"
             },
             {
-                "id": "4",
-                "categoryId": "1",
-                "name": "JACK DANIELS CHOCOLATE FUDGE PUDDING",
-                "price": "3.99",
-                "img": "",
-                "description": "A rich, self saucing chocolate fudge pudding, laced with Jack Daniels. Served with choc sauce, whipped cream and vanilla ice cream.",
-                "isSelected": "false"
+                "Id": "4",
+                "CategoryId": "1",
+                "Name": "JACK DANIELS CHOCOLATE FUDGE PUDDING",
+                "Price": "3.99",
+                "Img": "",
+                "Description": "A rich, self saucing chocolate fudge pudding, laced with Jack Daniels. Served with choc sauce, whipped cream and vanilla ice cream.",
+                "IsSelected": "false"
             },
             {
-                "id": "5",
-                "categoryId": "4",
-                "name": "Ice Cream",
-                "price": "1.99",
-                "img": "",
-                "description": "This is ice cream",
-                "isSelected": "false"
+                "Id": "5",
+                "CategoryId": "4",
+                "Name": "Ice Cream",
+                "Price": "1.99",
+                "Img": "",
+                "Description": "This is ice cream",
+                "IsSelected": "false"
             }
         ]
     }

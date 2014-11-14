@@ -94,6 +94,7 @@
 
     <modal title="Your order details:" visible="showOrderDetails">
         <form role="form">
+            Table: <input type="text" data-ng-model="submitOrder.TableNo" data-ng-required />
             <table data-ng-show="order.length>0" style="width:100%">
                 <tr>
                     <th style="width: 70%">Name</th>
