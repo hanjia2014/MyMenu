@@ -1,16 +1,16 @@
-﻿menuApp.factory("menuService", function ($http, $q) {
+﻿menuApp.factory("menuService", function ($http, $q, hotmenuConstants) {
     return ({
         getMenu: function () {
             return $http.get('menu.json');
         },
         getCategories: function () {
-            return $http.get('http://menuserver.azurewebsites.net/api/category');
+            return $http.get(hotmenuConstants.ServerApiBaseUrl + 'category');
         },
         getMenuItems: function () {
-            return $http.get('http://menuserver.azurewebsites.net/api/menuitem');
+            return $http.get(hotmenuConstants.ServerApiBaseUrl + 'menuitem');
         },
         submitOrder: function (order) {
-            return $http.post('http://menuserver.azurewebsites.net/api/order', order);
+            return $http.post(hotmenuConstants.ServerApiBaseUrl + 'order', order);
         },
     });
 });

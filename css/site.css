@@ -23,7 +23,9 @@ footer {
     border-top: 1px solid #e5e5e5;
 }
 
-button {
+
+
+button.order {
     height: 30px;
     margin: 0 7px;
     padding: 5px 0;
@@ -35,41 +37,38 @@ button {
     outline: 0;
     display: table-cell;
     vertical-align: middle;
+    float: right;
+    background: #aaa;
+    padding: 0px 15px;
+    transition: 0.3s linear;
+    -o-transition: 0.3s linear;
+    -ms-transition: 0.3s linear;
+    -moz-transition: 0.3s linear;
+    -webkit-transition: 0.3s linear;
 }
 
-    button.order {
-        float: right;
-        background: #aaa;
-        padding: 0px 15px;
-        transition: 0.3s linear;
-        -o-transition: 0.3s linear;
-        -ms-transition: 0.3s linear;
-        -moz-transition: 0.3s linear;
-        -webkit-transition: 0.3s linear;
+    button.order.selected {
+        background: #00c09e;
+        cursor: pointer;
     }
 
-        button.order.selected {
-            background: #00c09e;
-            cursor: pointer;
-        }
+    button.order:after {
+        position: absolute;
+        content: attr(data-counter);
+        padding: 5px 8px;
+        margin: -15px 0 0 0px;
+        line-height: 100%;
+        border: 2px #fff solid;
+        border-radius: 60px;
+        background: orangered;
+        transition: 0.1s linear;
+        -o-transition: 0.1s linear;
+        -ms-transition: 0.1s linear;
+        -moz-transition: 0.1s linear;
+        -webkit-transition: 0.1s linear;
+        opacity: 0;
+    }
 
-        button.order:after {
-            position: absolute;
-            content: attr(data-counter);
-            padding: 5px 8px;
-            margin: -15px 0 0 0px;
-            line-height: 100%;
-            border: 2px #fff solid;
-            border-radius: 60px;
-            background: orangered;
-            transition: 0.1s linear;
-            -o-transition: 0.1s linear;
-            -ms-transition: 0.1s linear;
-            -moz-transition: 0.1s linear;
-            -webkit-transition: 0.1s linear;
-            opacity: 0;
-        }
-
-        button.order.selected:after {
-            opacity: 1;
-        }
+    button.order.selected:after {
+        opacity: 1;
+    }

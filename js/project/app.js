@@ -14,6 +14,10 @@ menuApp.config(['$httpProvider', function ($httpProvider) {
 
 }]);
 
+menuApp.value('hotmenuConstants', {
+    ServerApiBaseUrl: 'http://menuserver.azurewebsites.net/api/',
+});
+
 menuApp.directive('modal', function () {
     return {
         template: '<div class="modal fade">' +
