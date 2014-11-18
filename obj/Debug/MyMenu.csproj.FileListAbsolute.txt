@@ -13,3 +13,4 @@ D:\Projects\MyMenu\bin\MyMenu.pdb
 D:\Projects\MyMenu\obj\Debug\MyMenu.csprojResolveAssemblyReference.cache
 D:\Projects\MyMenu\obj\Debug\MyMenu.dll
 D:\Projects\MyMenu\obj\Debug\MyMenu.pdb
+D:\Projects\MyMenu\bin\MyMenu.dll.config

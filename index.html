@@ -73,7 +73,9 @@
                     </select>
                     </div>
                 </p>
-
+                <p data-ng-if="object.Image != null">
+                    <img ng-src="data:image/JPEG;base64,{{object.Image}}" class="li-image img-rounded img-thumbnail" width="80px" height="80px">
+                </p>
                 <p>{{object.Description}}</p>
             </div>
         </div>
