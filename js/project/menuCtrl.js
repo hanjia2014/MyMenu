@@ -132,8 +132,9 @@
         });
         //submit
         menuService.submitOrder($scope.submitOrder).success(function (data) {
-            //$scope.submitOrder = {};
-            //$scope.submitOrder.Items.length = 0;
+            delete $scope.submitOrder;
+            delete $scope.order;
+            counter(0);
         }).error(function (data, status, headers, config) {
             
         });
