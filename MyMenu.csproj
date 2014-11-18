@@ -95,9 +95,8 @@
     <Content Include="lab\image-selector\js\jquery.js" />
     <Content Include="web.config" />
     <Content Include="menu.json" />
-    <None Include="Properties\PublishProfiles\hotmenu - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\hotmenu - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\local.pubxml" />
+    <None Include="Properties\PublishProfiles\menuclient - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\menuclient - Web Deploy.pubxml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

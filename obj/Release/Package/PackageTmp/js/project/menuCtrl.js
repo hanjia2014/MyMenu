@@ -33,21 +33,6 @@
         };
     });
 
-    //
-
-    menuService.getMenu().success(function (data) {
-        //var dataItems = data.menu.items;
-
-        //$scope.categories = data.menu.categories;
-
-        //for (var i = 0; i < dataItems.length; i++) {
-        //    var item = dataItems[i];
-        //    item.Quantity = 1;
-        //    allItems.push(item);
-        //    $scope.menuItems.push(item);
-        //};
-    });
-
     $scope.addToOrder = function (item) {
         if (item.IsSelected) {
             $scope.order.push(item);
@@ -147,7 +132,8 @@
         });
         //submit
         menuService.submitOrder($scope.submitOrder).success(function (data) {
-            
+            //$scope.submitOrder = {};
+            //$scope.submitOrder.Items.length = 0;
         }).error(function (data, status, headers, config) {
             
         });

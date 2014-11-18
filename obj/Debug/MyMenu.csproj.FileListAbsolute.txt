@@ -8,7 +8,6 @@ D:\MyMenu\MyMenu\bin\MyMenu.pdb
 D:\MyMenu\MyMenu\obj\Debug\MyMenu.csprojResolveAssemblyReference.cache
 D:\MyMenu\MyMenu\obj\Debug\MyMenu.dll
 D:\MyMenu\MyMenu\obj\Debug\MyMenu.pdb
-D:\Projects\MyMenu\bin\MyMenu.dll.config
 D:\Projects\MyMenu\bin\MyMenu.dll
 D:\Projects\MyMenu\bin\MyMenu.pdb
 D:\Projects\MyMenu\obj\Debug\MyMenu.csprojResolveAssemblyReference.cache
