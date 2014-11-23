@@ -85,7 +85,6 @@
         };
     };
 
-
     function counter(count) {
         if (count > 0)
             $('.order').addClass('selected');
