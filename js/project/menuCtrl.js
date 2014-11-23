@@ -105,11 +105,11 @@
     $scope.submit = function () {
         var orderId = generateNewId();
         $scope.submitOrder.Id = orderId;
-        //$scope.submitOrder.Time = new Date();
+        $scope.submitOrder.Time = (new Date()).toDateString();
         $scope.submitOrder.Status = "In Progress";
 
 
-        angular.forEach($scope.order, function(item) {
+        angular.forEach($scope.order, function (item) {
             if (item.Quantity > 1) {
                 for (var i = 0; i < item.Quantity; i++) {
                     $scope.submitOrder.Items.push({
@@ -134,9 +134,16 @@
         menuService.submitOrder($scope.submitOrder).success(function (data) {
             delete $scope.submitOrder;
             delete $scope.order;
+            $scope.order = [];
+            $scope.submitOrder = {};
+            $scope.submitOrder.Items = [];
+            angular.forEach($scope.menuItems, function (item) {
+                item.IsSelected = false;
+                item.Quantity = 1;
+            });
             counter(0);
         }).error(function (data, status, headers, config) {
-            
+
         });
     };
 });
