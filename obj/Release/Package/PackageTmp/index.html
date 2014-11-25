@@ -73,7 +73,9 @@
                     </select>
                     </div>
                 </p>
-
+                <p data-ng-if="object.Image != null">
+                    <img ng-src="data:image/JPEG;base64,{{object.Image}}" class="li-image img-rounded img-thumbnail" width="80px" height="80px">
+                </p>
                 <p>{{object.Description}}</p>
             </div>
         </div>
@@ -114,7 +116,7 @@
                 <tr>
                     <td></td>
                     <td><a href="" onclick="$('#note').toggle(500);" data-ng-click="hideNote = !hideNote">Add Note</a></td>
-                    <td><button type="submit" class="btn btn-primary" data-ng-click="submit();">Submit</button></td>
+                    <td><button type="submit" class="btn btn-primary" data-ng-click="submit();" data-dismiss="modal">Submit</button></td>
                 </tr>
             </table>
             <div id="note" data-ng-show="hideNote">

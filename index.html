@@ -54,7 +54,7 @@
         </div>
         <!-- /.row -->
         <div id="divItems" class="row" data-ng-repeat="object in menuItems">
-            <div class="col-lg-12">
+            <div class="col-lg-12" id="obj_{{object.Id}}">
                 <p>
                     <h3 style="display: inline">{{object.Name}}
                     </h3>
@@ -136,6 +136,7 @@
     <script src="js/ng-infinite-scroll.min.js"></script>
     <script src="js/ui-bootstrap-0.11.0.min.js"></script>
     <script src="js/ui-bootstrap-tpls-0.11.0.min.js"></script>
+    <script src="js/jquery.animate-colors-min.js"></script>
     <script src="js/project/app.js"></script>
     <script src="js/project/menuCtrl.js"></script>
     <script src="js/project/menuService.js"></script>

@@ -8,3 +8,4 @@ D:\Projects\MyMenu\bin\MyMenu.pdb
 D:\Projects\MyMenu\obj\Release\MyMenu.csprojResolveAssemblyReference.cache
 D:\Projects\MyMenu\obj\Release\MyMenu.dll
 D:\Projects\MyMenu\obj\Release\MyMenu.pdb
+D:\Projects\MyMenu\bin\MyMenu.dll.config

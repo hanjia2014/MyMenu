@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="js\angular-route.min.js" />
+    <Content Include="js\jquery.animate-colors-min.js" />
     <Content Include="js\ng-infinite-scroll.min.js" />
     <Content Include="js\ui-bootstrap-0.11.0.min.js" />
     <Content Include="js\ui-bootstrap-tpls-0.11.0.min.js" />
