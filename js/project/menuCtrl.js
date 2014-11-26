@@ -38,7 +38,7 @@
             var objDiv = angular.element(document.querySelector('#obj_' + item.Id));
             objDiv.animate({ backgroundColor: 'pink' }, {
                 complete: function () {
-                    $(this).css('background-color', '').animate();
+                    $(this).animate().css('background-color', '');
             }});
             $scope.order.push(item);
         } else {
