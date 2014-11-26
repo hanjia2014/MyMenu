@@ -36,7 +36,7 @@
     $scope.addToOrder = function (item) {
         if (item.IsSelected) {
             var objDiv = angular.element(document.querySelector('#obj_' + item.Id));
-            objDiv.animate({ backgroundColor: 'pink' }, {
+            objDiv.animate({ backgroundColor: 'lightpink' }, {
                 complete: function () {
                     $(this).animate().css('background-color', '');
             }});
