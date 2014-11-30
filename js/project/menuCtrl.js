@@ -75,6 +75,16 @@
         var items = [];
         $scope.menuItems.length = 0;
 
+        if (categoryId == 0)
+            $scope.selectedCategory = null;
+        else {
+            angular.forEach($scope.categories, function (category) {
+                if (category.Id == categoryId) {
+                    $scope.selectedCategory = category.Name;
+                }
+            });
+        }
+
         angular.forEach(allItems, function (item) {
             if (categoryId == 0) {
                 items.push(item);
