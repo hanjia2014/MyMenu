@@ -98,7 +98,22 @@
 
     <modal title="Your order details:" visible="showOrderDetails">
         <form role="form">
-            Table: <input type="text" data-ng-model="submitOrder.TableNo" /><span class="has-error" data-ng-if="submitOrder.TableNo==null||submitOrder.TableNo==''">* Please provide table no</span>
+            Table: <select type="text" data-ng-model="submitOrder.TableNo">
+                <option></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+            <span class="error-text" data-ng-if="submitOrder.TableNo==null||submitOrder.TableNo==''">* Please provide table no</span>
             <table data-ng-show="order.length>0" style="width:100%">
                 <tr>
                     <th style="width: 70%">Name</th>
@@ -118,7 +133,7 @@
                 <tr>
                     <td></td>
                     <td><a href="" onclick="$('#note').toggle(500);" data-ng-click="hideNote = !hideNote">Add Note</a></td>
-                    <td><button type="submit" class="btn btn-primary" data-ng-click="submit();" data-dismiss="modal">Submit</button></td>
+                    <td><button type="submit" class="btn btn-primary" data-ng-click="submit();" data-dismiss="modal" data-ng-disabled="submitOrder.TableNo==null||submitOrder.TableNo==''">Submit</button></td>
                 </tr>
             </table>
             <div id="note" data-ng-show="hideNote">

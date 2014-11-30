@@ -77,3 +77,8 @@ button.order {
     background-color: #66cdaa;
     border-radius: 10px;
 }
+
+.error-text {
+    color: red;
+    font-size: 11px;
+}
