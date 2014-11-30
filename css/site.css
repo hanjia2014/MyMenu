@@ -72,3 +72,9 @@ button.order {
     button.order.selected:after {
         opacity: 1;
     }
+
+.item-selected {
+    background-color: #66cdaa;
+    border-radius: 10px;
+    border: 1px solid green;
+}

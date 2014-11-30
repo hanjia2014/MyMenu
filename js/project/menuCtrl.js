@@ -107,6 +107,7 @@
     };
 
     $scope.submit = function () {
+        if ($scope.submitOrder.TableNo == null || $scope.submitOrder.TableNo == '') return;
         var orderId = generateNewId();
         $scope.submitOrder.Id = orderId;
         $scope.submitOrder.Time = (new Date()).toDateString();

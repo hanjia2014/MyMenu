@@ -33,7 +33,8 @@
                     <li data-ng-repeat="category in categories | orderBy : 'Id'"><a data-ng-click="getItemByCategory(category.Id)" style="cursor: pointer">{{category.Name}}</a></li>
                     <!--<li><a style="cursor: pointer" data-ng-disabled="order.length < 1" value="Order" data-ng-click="toggleOrderDetails();">Order<span data-ng-show="order.length > 0"> ({{order.count}})</span></a></li>-->
                     <li style="padding-top: 10px">
-                        <button class="order" data-ng-disabled="order.length < 1" value="Order" data-ng-click="toggleOrderDetails();">Order</button></li>
+                        <button class="order" data-ng-disabled="order.length < 1" value="Order" data-ng-click="toggleOrderDetails();">Order</button>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -46,31 +47,32 @@
         <!-- Page Header -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Page Heading
-
+                <h1 class="page-header">
+                    Page Heading
                     <small>Secondary Text</small>
                 </h1>
             </div>
         </div>
         <!-- /.row -->
         <div id="divItems" class="row" data-ng-repeat="object in menuItems">
-            <div class="col-lg-12" id="obj_{{object.Id}}">
+            <div class="col-lg-12" style="margin: 2px;" id="obj_{{object.Id}}" data-ng-class="object.IsSelected?'item-selected':''">
                 <p>
-                    <h3 style="display: inline">{{object.Name}}
+                    <h3 style="display: inline">
+                        {{object.Name}}
                     </h3>
                     <input type="checkbox" title="Select" data-ng-model="object.IsSelected" data-ng-click="addToOrder(object)" />
                 </p>
                 <p>
                     <h4 style="display: inline">{{object.Price | currency}}</h4>
                     <div style="display: inline" data-ng-show="object.IsSelected==true">
-                        Quantity: 
-                    <select data-ng-model="object.Quantity" data-ng-change="getOrderCount();">
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                        <option value="4">Four</option>
-                        <option value="5">Five</option>
-                    </select>
+                        Quantity:
+                        <select data-ng-model="object.Quantity" data-ng-change="getOrderCount();">
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five</option>
+                        </select>
                     </div>
                 </p>
                 <p data-ng-if="object.Image != null">
@@ -96,7 +98,7 @@
 
     <modal title="Your order details:" visible="showOrderDetails">
         <form role="form">
-            Table: <input type="text" data-ng-model="submitOrder.TableNo" data-ng-required />
+            Table: <input type="text" data-ng-model="submitOrder.TableNo" /><span class="has-error" data-ng-if="submitOrder.TableNo==null||submitOrder.TableNo==''">* Please provide table no</span>
             <table data-ng-show="order.length>0" style="width:100%">
                 <tr>
                     <th style="width: 70%">Name</th>
@@ -120,8 +122,7 @@
                 </tr>
             </table>
             <div id="note" data-ng-show="hideNote">
-                <textarea rows="4" cols="50" data-ng-model="submitOrder.Note">
-                </textarea>
+                <textarea rows="4" cols="50" data-ng-model="submitOrder.Note"></textarea>
             </div>
         </form>
     </modal>
