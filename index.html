@@ -61,8 +61,7 @@
                     <h3 style="display: inline">
                         {{object.Name}}
                     </h3>
-                    <input type="checkbox" title="Select" data-ng-model="object.IsSelected" data-ng-click="addToOrder(object)" />
-                    <!--<input type="checkbox" title="Select" data-ng-model="object.IsSelected" data-ng-click="addToOrder(object)" ui-switch="{color: 'green', secondaryColor: '#F89279'}" />-->
+                    <input type="checkbox" title="Select" data-ng-model="object.IsSelected" data-ng-change="addToOrder(object)" ui-switch="{color: 'green', secondaryColor: '#F89279'}" />
                 </p>
                 <p>
                     <h4 style="display: inline">{{object.Price | currency}}</h4>
