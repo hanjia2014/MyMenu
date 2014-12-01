@@ -11,6 +11,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/site.css" rel="stylesheet">
+    <link href="css/switchery.css" rel="stylesheet" />
 </head>
 <body data-ng-app="menuApp" data-ng-controller="menuCtrl">
     <!-- Navigation -->
@@ -60,7 +61,7 @@
                     <h3 style="display: inline">
                         {{object.Name}}
                     </h3>
-                    <input type="checkbox" title="Select" data-ng-model="object.IsSelected" data-ng-click="addToOrder(object)" />
+                    <input type="checkbox" title="Select" data-ng-model="object.IsSelected" data-ng-click="addToOrder(object)" class="js-switch" ui-switch="{color: 'green', secondaryColor: '#F89279'}" />
                 </p>
                 <p>
                     <h4 style="display: inline">{{object.Price | currency}}</h4>
@@ -156,5 +157,7 @@
     <script src="js/project/app.js"></script>
     <script src="js/project/menuCtrl.js"></script>
     <script src="js/project/menuService.js"></script>
+    <script src="js/switchery.min.js"></script>
+    <script src="js/ng-switchery.js"></script>
 </body>
 </html>
