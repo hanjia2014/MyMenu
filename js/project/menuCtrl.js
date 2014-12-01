@@ -8,11 +8,6 @@
     $scope.submitOrder.Items = [];
     var allItems = [];
     
-    $scope.switches = {
-        basic: true,
-        custom: false
-    };
-    
     function getDateTime(dateValue) {
         var value = '\/Date(0)\/';
         if (dateValue) {
