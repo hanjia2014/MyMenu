@@ -1,4 +1,4 @@
-﻿menuApp.controller('menuCtrl', function ($scope, $routeParams, menuService) {
+﻿menuApp.controller('menuCtrl', function ($scope, $routeParams, menuService, progressIndicatorService) {
     $('#note').hide();
     $scope.copyRight = "Han Jia " + new Date().getFullYear();
     $scope.order = [];
@@ -35,11 +35,6 @@
 
     $scope.addToOrder = function (item) {
         if (item.IsSelected) {
-            //var objDiv = angular.element(document.querySelector('#obj_' + item.Id));
-            //objDiv.animate({ backgroundColor: 'lightpink' }, {
-            //    complete: function () {
-            //        $(this).animate().css('background-color', '');
-            //}});
             $scope.order.push(item);
         } else {
             var index = $scope.order.indexOf(item);
@@ -146,6 +141,7 @@
             }
         });
         //submit
+        progressIndicatorService.startSpinner('progressIndicator');
         menuService.submitOrder($scope.submitOrder).success(function (data) {
             delete $scope.submitOrder;
             delete $scope.order;
@@ -157,8 +153,15 @@
                 item.Quantity = 1;
             });
             counter(0);
+            progressIndicatorService.stopSpinner('progressIndicator');
+
+            $scope.toggleSentNotification();
         }).error(function (data, status, headers, config) {
 
         });
+    };
+    
+    $scope.toggleSentNotification = function () {
+        $scope.showSentNotification = !$scope.showSentNotification;
     };
 });
