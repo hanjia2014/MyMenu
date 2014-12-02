@@ -78,7 +78,7 @@
                     <h4 style="display: inline">{{object.Price | currency}}</h4>
                 </p>
                 <p data-ng-if="object.Image != null">
-                    <img ng-src="data:image/JPEG;base64,{{object.Image}}" class="li-image img-rounded img-thumbnail" width="80px" height="80px">
+                    <a href><img data-ng-src="data:image/JPEG;base64,{{object.Image}}" class="li-image img-rounded img-thumbnail" width="80px" height="80px" data-ng-click="showImage(object.Image, object.Name)"></a>
                 </p>
                 <p>{{object.Description}}</p>
             </div>
@@ -149,6 +149,11 @@
         </form>
     </modal>
     
+    <modal title="{{selectedImageName}}" visible="displayImage">
+        <form role="form">
+            <img data-ng-src="data:image/JPEG;base64,{{selectedImage}}" class="li-image img-rounded img-thumbnail" width="100%" height="100%">
+        </form>
+    </modal>
     
     <modal title="" visible="showSentNotification">
         <form role="form">
@@ -174,5 +179,6 @@
     <script src="js/ng-switchery.js"></script>
     <script src="js/project/progressIndicatorService.js"></script>
     <script src="js/spin.min.js"></script>
+    <script src="js/jquery.simplemodal.1.4.1.min.js"></script>
 </body>
 </html>

@@ -164,4 +164,10 @@
     $scope.toggleSentNotification = function () {
         $scope.showSentNotification = !$scope.showSentNotification;
     };
+
+    $scope.showImage = function (image, name) {
+        $scope.selectedImage = image;
+        $scope.selectedImageName = name;
+        $scope.displayImage = !$scope.displayImage;
+    };
 });
