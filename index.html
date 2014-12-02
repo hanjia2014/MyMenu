@@ -63,12 +63,9 @@
                     </h3>
                     <!--<input type="checkbox" title="Select" data-ng-model="object.IsSelected" data-ng-change="addToOrder(object)" ui-switch="{color: 'green', secondaryColor: '#F89279'}" />-->
                     <label class="switch red"><input type="checkbox" title="Select" data-ng-model="object.IsSelected" data-ng-change="addToOrder(object)"><i></i></label>
-                </p>
-                <p>
-                    <h4 style="display: inline">{{object.Price | currency}}</h4>
-                    <div style="display: inline" data-ng-show="object.IsSelected==true">
+                    <div style="display: inline; vertical-align:top" data-ng-show="object.IsSelected==true">
                         Quantity:
-                        <select data-ng-model="object.Quantity" data-ng-change="getOrderCount();">
+                        <select data-ng-model="object.Quantity" style="display: inline; vertical-align:top" data-ng-change="getOrderCount();">
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
@@ -76,6 +73,9 @@
                             <option value="5">Five</option>
                         </select>
                     </div>
+                </p>
+                <p>
+                    <h4 style="display: inline">{{object.Price | currency}}</h4>
                 </p>
                 <p data-ng-if="object.Image != null">
                     <img ng-src="data:image/JPEG;base64,{{object.Image}}" class="li-image img-rounded img-thumbnail" width="80px" height="80px">
