@@ -1,4 +1,4 @@
-﻿menuApp.controller('menuCtrl', function ($scope, $routeParams, menuService, progressIndicatorService) {
+﻿menuApp.controller('menuCtrl', function ($scope, $routeParams, menuService) {
     $('#note').hide();
     $scope.copyRight = "Han Jia " + new Date().getFullYear();
     $scope.order = [];
@@ -141,7 +141,6 @@
             }
         });
         //submit
-        progressIndicatorService.startSpinner('progressIndicator');
         menuService.submitOrder($scope.submitOrder).success(function (data) {
             delete $scope.submitOrder;
             delete $scope.order;
@@ -153,7 +152,6 @@
                 item.Quantity = 1;
             });
             counter(0);
-            progressIndicatorService.stopSpinner('progressIndicator');
 
             $scope.toggleSentNotification();
         }).error(function (data, status, headers, config) {
