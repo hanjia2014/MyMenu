@@ -141,6 +141,9 @@
             }
         });
         //submit
+        var spinner = null;
+        var bodyEle = document.documentElement;
+        spinner = new Spinner().spin(bodyEle);
         menuService.submitOrder($scope.submitOrder).success(function (data) {
             delete $scope.submitOrder;
             delete $scope.order;
@@ -152,7 +155,7 @@
                 item.Quantity = 1;
             });
             counter(0);
-
+            spinner.stop(bodyEle);
             $scope.toggleSentNotification();
         }).error(function (data, status, headers, config) {
 
