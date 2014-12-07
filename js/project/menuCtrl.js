@@ -154,6 +154,12 @@
                 item.IsSelected = false;
                 item.Quantity = 1;
             });
+            for (var i = 0; i < allItems.length; i++) {
+                var item = allItems[i];
+                item.Quantity = 1;
+                item.IsSelected = false;
+            };
+            
             counter(0);
             spinner.stop(bodyEle);
             $scope.toggleSentNotification();
