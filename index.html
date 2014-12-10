@@ -12,6 +12,7 @@
     <!-- Custom CSS -->
     <link href="css/site.css" rel="stylesheet">
     <link href="css/switchery.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="img/Farm-Fresh_fire.png">
 </head>
 <body data-ng-app="menuApp" data-ng-controller="menuCtrl">
     <!-- Navigation -->
@@ -101,20 +102,20 @@
     <modal title="Your order details:" visible="showOrderDetails">
         <form role="form">
             Table: <select type="text" data-ng-model="submitOrder.TableNo">
-                       <option></option>
-                       <option value="1">1</option>
-                       <option value="2">2</option>
-                       <option value="3">3</option>
-                       <option value="4">4</option>
-                       <option value="5">5</option>
-                       <option value="6">6</option>
-                       <option value="7">7</option>
-                       <option value="8">8</option>
-                       <option value="9">9</option>
-                       <option value="10">10</option>
-                       <option value="11">11</option>
-                       <option value="12">12</option>
-                   </select>
+                <option></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
             <span class="error-text" data-ng-if="submitOrder.TableNo==null||submitOrder.TableNo==''">* Please provide table no</span>
             <table data-ng-show="order.length>0" style="width:100%">
                 <tr>
@@ -148,13 +149,13 @@
             </div>
         </form>
     </modal>
-    
+
     <modal title="{{selectedImageName}}" visible="displayImage">
         <form role="form">
             <img data-ng-src="data:image/JPEG;base64,{{selectedImage}}" class="li-image img-rounded img-thumbnail" width="100%" height="100%">
         </form>
     </modal>
-    
+
     <modal title="Success" visible="showSentNotification">
         <form role="form">
             <div style="color:green"><h3>Your order has been sent.</h3></div>
