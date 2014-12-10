@@ -61,7 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\switchery.css" />
-    <Content Include="img\Farm-Fresh_fire.png" />
+    <Content Include="img\hot.png" />
     <Content Include="js\angular-route.min.js" />
     <Content Include="js\jquery.animate-colors-min.js" />
     <Content Include="js\jquery.simplemodal.1.4.1.min.js" />
